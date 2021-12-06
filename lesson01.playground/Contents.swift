@@ -1,3 +1,8 @@
+/* HOME WORK
+
+1. Display student description using constants and variables.
+ */
+
 var firstNameStudent    = "Pavel"
 var lastNameStudent     = "Bogdanov"
 var ageStudent          = 24

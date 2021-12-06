@@ -46,3 +46,10 @@ let unsignedIntMin64 : UInt64 = UInt64.min
 
 typealias SomeNumber = Int
 let variable : SomeNumber = 10 
+
+/*          HOME WORK
+
+1. Infer ranges of basic data types.
+2.
+
+ */
