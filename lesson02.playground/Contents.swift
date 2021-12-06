@@ -51,5 +51,36 @@ let variable : SomeNumber = 10
 
 1. Infer ranges of basic data types.
 2.
-
  */
+
+let rangeOfInt = "The range of Int is  \(Int.min) <= 0 < \(Int.max)"
+let rangeOfUInt = "The range of UInt is \(UInt.min) <= \(UInt.max)"
+
+let rangeOfInt8 = "The range of Int8 is \(Int8.min) <= 0 < \(Int8.max)"
+let rangeOfUInt8 = "The range of UInt8 is \(UInt8.min) <= \(UInt8.max)"
+
+let rangeOfInt16 = "The range of Int16 is \(Int16.min) <= 0 < \(Int16.max)"
+let rangeOfUInt16 = "The range of UInt16 is \(UInt16.min) <= \(UInt16.max)"
+
+let rangeOfInt32 = "The range of Int8 is \(Int32.min) <= 0 < \(Int32.max)"
+let rangeOfUInt32 = "The range of UInt8 is \(UInt32.min) <= \(UInt32.max)"
+
+let rangeOfInt64 = "The range of Int64 is \(Int64.min) <= 0 < \(Int64.max)"
+let rangeOfUInt64 = "The range of UInt64 is \(UInt64.min) < =\(UInt64.max)"
+
+print(rangeOfInt)
+print(rangeOfUInt)
+
+print(rangeOfInt8)
+print(rangeOfUInt8)
+
+print(rangeOfInt16)
+print(rangeOfUInt16)
+
+print(rangeOfInt32)
+print(rangeOfUInt32)
+
+print(rangeOfInt64)
+print(rangeOfUInt64)
+
+
