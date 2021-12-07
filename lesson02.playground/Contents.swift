@@ -50,9 +50,11 @@ let variable : SomeNumber = 10
 /*          HOME WORK
 
 1. Infer ranges of basic data types.
-2.
+2. Create a three constants as Int, Double and Float
+3. Compare Int and Double constants with each other
  */
 
+//task 1
 let rangeOfInt = "The range of Int is  \(Int.min) <= 0 < \(Int.max)"
 let rangeOfUInt = "The range of UInt is \(UInt.min) <= \(UInt.max)"
 
@@ -83,4 +85,20 @@ print(rangeOfUInt32)
 print(rangeOfInt64)
 print(rangeOfUInt64)
 
+//task 2
+let intConstant = 1
+let floatConstant : Float = 1.5
+let doubleConstant = 1.5
 
+let sumOfConstantsInt = intConstant + Int(floatConstant) + Int(doubleConstant)
+let sumOfConstantsFloat : Float = Float(intConstant) + floatConstant + Float(doubleConstant)
+let sumOfConstantsDouble = Double(intConstant) + Double(floatConstant) + doubleConstant
+
+//task 3
+if Double(sumOfConstantsInt) < sumOfConstantsDouble {
+    
+    print("sumOfConstantsInt smaller than sumOfConstantsDouble")
+} else {
+    
+    print("sumOfConstnatsInt bigger than sumOfConsantsDouble")
+}
