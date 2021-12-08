@@ -44,8 +44,8 @@ let unsignedIntMin64 : UInt64 = UInt64.min
 0x5p2       //5 * 2^2
 0x5p-2      //5 * 2^(-2)
 
-typealias SomeNumber = Int
-let variable : SomeNumber = 10 
+typealias SomeType = Int
+let variable : SomeType = 10 
 
 /*          HOME WORK
 
@@ -90,15 +90,13 @@ let intConstant = 1
 let floatConstant : Float = 1.5
 let doubleConstant = 1.5
 
-let sumOfConstantsInt = intConstant + Int(floatConstant) + Int(doubleConstant)
+let sumOfConstantsInt = Int(Double(intConstant) + Double(floatConstant) + Double(doubleConstant))
 let sumOfConstantsFloat : Float = Float(intConstant) + floatConstant + Float(doubleConstant)
 let sumOfConstantsDouble = Double(intConstant) + Double(floatConstant) + doubleConstant
 
 //task 3
 if Double(sumOfConstantsInt) < sumOfConstantsDouble {
-    
-    print("sumOfConstantsInt smaller than sumOfConstantsDouble")
+    print("sumOfConstantsInt smaller")
 } else {
-    
-    print("sumOfConstnatsInt bigger than sumOfConsantsDouble")
+    print("sumOfConstnatsInt bigger or equal")
 }
