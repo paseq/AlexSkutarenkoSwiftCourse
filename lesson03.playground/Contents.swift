@@ -15,8 +15,6 @@ someTuple.3
 print(someTuple)
 
 
-
-
 let (someInt, someString, someBool, someDouble) = someTuple
 
 someInt
@@ -31,14 +29,11 @@ let (_, _, check, _) = someTuple
 check
 
 
-
-
 var a = (x: 1, y: 2)
 let b = (x: 3, y: 4)
 a = b
 a
 b
-
 
 
 /*
@@ -53,17 +48,15 @@ letTwo
 letThree
 
 
-
-
 let one = "hello"
 let two = 5
 
 print((one, two))
 
-
 /*
             HOMEWORK
 */
+
 let fillString = "--------------------------------"
 let homeWorkPointer = "\(fillString)HOMEWORK\(fillString)"
 let startFirstPartPointer = "PART 1:\n"
@@ -78,7 +71,6 @@ print(homeWorkPointer)
     the third of which is the maximum number of squats. Print this tuple with
     help Print().
 */
-
 print(startFirstPartPointer)
 
 
@@ -92,7 +84,6 @@ print(endPointer)
  2. Print all parameters of tuple like a "parameterName = value". Make output with
     different ways of passing tuple values.
 */
-
 print(startSecondPartPointer)
 
 
@@ -107,7 +98,6 @@ print(endPointer)
  3. Create another tuple for your friend with the same parameters. Using intermediate
     variables, swap of the values of first tuple with the second.
 */
-
 print(startThirdPartPointer)
 
 
