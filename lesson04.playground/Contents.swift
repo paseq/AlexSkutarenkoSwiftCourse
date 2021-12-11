@@ -52,7 +52,7 @@ let thirdNumber = "123asd"
 let fourthNumber = "123"
 let fifthNumber = ""
 
-var sum : Int = 0
+var sum = 0
 
 if let tmp = Int(firstNumber) {
     sum += tmp
@@ -103,12 +103,12 @@ print(startSecondPartPointer + "\nPART 2.1:\n")
 
 //TO UNCOMMENT TUPLES FOR DIFFERNT CHECK
 
-//let tupleFromServer: (codeStatus: Int, message: String?, errorMessage: String?)   = (300, "hello", "error")
-let tupleFromServer: (codeStatus: Int, message: String?, errorMessage: String?)   = (301, "hello", "error")
+//let tupleFromServer: (codeStatus: Int, message: String?, errorMessage: String?)   = (299, "hello", "error")
+let tupleFromServer: (codeStatus: Int, message: String?, errorMessage: String?)   = (300, "hello", "error")
 
 let missingMessage = "message is missing!"
 
-if tupleFromServer.codeStatus >= 200 && tupleFromServer.codeStatus <= 300 {
+if tupleFromServer.codeStatus >= 200 && tupleFromServer.codeStatus < 300 {
     
     if let tmp = tupleFromServer.message {
         print(tmp)
@@ -176,107 +176,107 @@ print(endPointer)
 
 print(startThirdPartPointer)
 
+typealias Student = (name: String?, carPlate: String?, grade: Int?)
 
+let first: Student
+let second: Student
+let third: Student
+let fourth: Student
+let fifth: Student
 
-let firstStudent: (name: String, car: String?, grade: Int?)
-let secondStudent: (name: String, car: String?, grade: Int?)
-let thirdStudent: (name: String, car: String?, grade: Int?)
-let fourthStudent: (name: String, car: String?, grade: Int?)
-let fifthStudent: (name: String, car: String?, grade: Int?)
+first.name  = "Ivan"
+second.name = "Alexander"
+third.name  = "Petr"
+fourth.name = "Dmitriy"
+fifth.name  = "Alex"
 
-firstStudent.name  = "Ivan"
-secondStudent.name = "Alexander"
-thirdStudent.name  = "Petr"
-fourthStudent.name = "Dmitriy"
-fifthStudent.name  = "Alex"
+first.carPlate  = nil
+second.carPlate = "Volvo"
+third.carPlate  = nil
+fourth.carPlate = "Lada"
+fifth.carPlate  = nil
 
-firstStudent.car  = nil
-secondStudent.car = "Volvo"
-thirdStudent.car  = nil
-fourthStudent.car = "Lada"
-fifthStudent.car  = nil
+first.grade  = 4
+second.grade = 5
+third.grade  = nil
+fourth.grade = 4
+fifth.grade  = nil
 
-firstStudent.grade  = 4
-secondStudent.grade = 5
-thirdStudent.grade  = nil
-fourthStudent.grade = 4
-fifthStudent.grade  = nil
-
-let (stringName, stringCar, stringHaventCar, stringGrade, stringNotGrades)  = ("Student's name is ",
+let (stringName, stringCarPlate, stringHaventCar, stringGrade, stringNotGrades)  = ("Student's name is ",
                                                                               "He have a car ",
                                                                               "He havent car.",
                                                                               "His grade is ",
                                                                               "He didn’t take the test.")
 // first student tuple
-print(stringName + firstStudent.name + ".")
+print(stringName + first.name! + ".")
 
-if let car = firstStudent.car {
-    print(stringCar + car + ".")
+if let car = first.carPlate {
+    print(stringCarPlate + car + ".")
 } else {
     print(stringHaventCar)
 }
 
-if let grade = firstStudent.grade {
+if let grade = first.grade {
     print(stringGrade + String(grade) + ".\n")
 } else {
     print(stringNotGrades + "\n")
 }
 
 // second student tuple
-print(stringName + secondStudent.name + ".")
+print(stringName + second.name! + ".")
 
-if let car = secondStudent.car {
-    print(stringCar + car + ".")
+if let car = second.carPlate {
+    print(stringCarPlate + car + ".")
 } else {
     print(stringHaventCar)
 }
 
-if let grade = secondStudent.grade {
+if let grade = second.grade {
     print(stringGrade + String(grade) + ".\n")
 } else {
     print(stringNotGrades + "\n")
 }
 
 // third student tuple
-print(stringName + thirdStudent.name + ".")
+print(stringName + third.name! + ".")
 
-if let car = thirdStudent.car {
-    print(stringCar + car + ".")
+if let car = third.carPlate {
+    print(stringCarPlate + car + ".")
 } else {
     print(stringHaventCar)
 }
 
-if let grade = thirdStudent.grade {
+if let grade = third.grade {
     print(stringGrade + String(grade) + ".\n")
 } else {
     print(stringNotGrades + "\n")
 }
 
 // fourth student tuple
-print(stringName + fourthStudent.name + ".")
+print(stringName + fourth.name! + ".")
 
-if let car = fourthStudent.car {
-    print(stringCar + car + ".")
+if let car = fourth.carPlate {
+    print(stringCarPlate + car + ".")
 } else {
     print(stringHaventCar)
 }
 
-if let grade = fourthStudent.grade {
+if let grade = fourth.grade {
     print(stringGrade + String(grade) + ".\n")
 } else {
     print(stringNotGrades + "\n")
 }
 
 // fifth student tuple
-print(stringName + fifthStudent.name + ".")
+print(stringName + fifth.name! + ".")
 
-if let car = fifthStudent.car {
-    print(stringCar + car + ".")
+if let car = fifth.carPlate {
+    print(stringCarPlate + car + ".")
 } else {
     print(stringHaventCar)
 }
 
-if let grade = fifthStudent.grade {
+if let grade = fifth.grade {
     print(stringGrade + String(grade) + ".\n")
 } else {
     print(stringNotGrades)
