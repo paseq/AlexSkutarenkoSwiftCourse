@@ -1,7 +1,5 @@
 /*
- 
- LESSSON 04: OPTIONAL CHAINING
- 
+        LESSSON 04: OPTIONAL CHAINING
  */
 
 var value: Int? = nil
@@ -18,11 +16,8 @@ if let someValue = value {
     print("nil")
 }
 
-
-
-
 /*
-                            HOMEWORK
+        HOMEWORK
  */
 
 let fillString = "--------------------------------"
@@ -33,7 +28,6 @@ let startThirdPartPointer = "PART 3:\n"
 let endPointer = fillString + fillString
 
 print(homeWorkPointer)
-
 /*
  Part 1.
  
@@ -41,9 +35,7 @@ print(homeWorkPointer)
  some only numbers, some may be empty. It is necessary to find the sum
  of these constants, casting them to the int type.
  */
-
 print(startFirstPartPointer)
-
 
 
 let firstNumber = "123"
@@ -83,9 +75,7 @@ print("Fifth  constant is '\(fifthNumber)'")
 print("\nSum of constants is \(sum)")
 
 
-
 print(endPointer)
-
 /*
  Part 2.
  
@@ -96,9 +86,7 @@ print(endPointer)
  String?. If status code in range 200 <= 300 display a message, otherwise
  display an error message.
  */
-
 print(startSecondPartPointer + "\nPART 2.1:\n")
-
 
 
 //TO UNCOMMENT TUPLES FOR DIFFERNT CHECK
@@ -126,9 +114,7 @@ if tupleFromServer.codeStatus >= 200 && tupleFromServer.codeStatus < 300 {
 }
 
 
-
 print(endPointer)
-
 /*
 Part 2.2
  
@@ -136,9 +122,7 @@ You receive a tuple with two parameters from the server.
 The first parameter is a message of type String?, the second is an error message of type
 String?. One of which always nil. Display the message if it exist.
  */
-
 print("PART 2.2:\n")
-
 
 
 //TO UNCOMMENT TUPLES FOR DIFFERNT CHECK
@@ -161,9 +145,7 @@ if let message = anotherTupleFromServer.message {
 }
 
 
-
 print(endPointer)
-
 /*
  Part 3.
  
@@ -173,8 +155,8 @@ print(endPointer)
  First you need to fill in name parameter for all tuples, then
  fill in car parameter, then the grade. Display all tuples.
  */
-
 print(startThirdPartPointer)
+
 
 typealias Student = (name: String?, carPlate: String?, grade: Int?)
 
@@ -282,6 +264,5 @@ if let grade = fifth.grade {
     print(stringNotGrades)
 }
 
-      
-      
+
 print(endPointer)
