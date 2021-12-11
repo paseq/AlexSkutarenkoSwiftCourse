@@ -1,3 +1,7 @@
+/*
+        LESSSON 02: BASIC OF TYPE OF DATA
+ */
+
 let intNumber    = 1_234_567_89
 let octNumber    = 0o1234567
 let hexNumber    = 0x123456789ABCDEF
@@ -47,14 +51,29 @@ let unsignedIntMin64 : UInt64 = UInt64.min
 typealias SomeType = Int
 let variable : SomeType = 10 
 
-/*          HOME WORK
 
-1. Infer ranges of basic data types.
-2. Create a three constants as Int, Double and Float
-3. Compare Int and Double constants with each other
+
+/*
+        HOMEWORK
  */
 
-//task 1
+let fillString = "--------------------------------"
+let homeWorkPointer = "\(fillString)HOMEWORK\(fillString)"
+let startFirstPartPointer = "PART 1:\n"
+let startSecondPartPointer = "PART 2:\n"
+let startThirdPartPointer = "PART 3:\n"
+let endPointer = fillString + fillString
+
+print(homeWorkPointer)
+
+/*
+ Part 1.
+ 
+ Display the range for each of the basic data types.
+ */
+print(startFirstPartPointer)
+
+
 let rangeOfInt = "The range of Int is  \(Int.min) <= 0 < \(Int.max)"
 let rangeOfUInt = "The range of UInt is \(UInt.min) <= \(UInt.max)"
 
@@ -85,7 +104,14 @@ print(rangeOfUInt32)
 print(rangeOfInt64)
 print(rangeOfUInt64)
 
-//task 2
+
+print(endPointer)
+/*
+ Part 2.
+ 
+ Sum the three data types as Int, Float and Short.
+ */
+
 let intConstant = 1
 let floatConstant : Float = 1.5
 let doubleConstant = 1.5
@@ -94,9 +120,21 @@ let sumOfConstantsInt = Int(Double(intConstant) + Double(floatConstant) + Double
 let sumOfConstantsFloat : Float = Float(intConstant) + floatConstant + Float(doubleConstant)
 let sumOfConstantsDouble = Double(intConstant) + Double(floatConstant) + doubleConstant
 
-//task 3
+/*
+ Part 3.
+ 
+ If the sum of type Int is greater than the sum of type Double,
+ display that, otherwise display another event.
+ */
+
+print(startThirdPartPointer)
+
+
 if Double(sumOfConstantsInt) < sumOfConstantsDouble {
     print("sumOfConstantsInt smaller")
 } else {
     print("sumOfConstnatsInt bigger or equal")
 }
+
+
+print(endPointer)
