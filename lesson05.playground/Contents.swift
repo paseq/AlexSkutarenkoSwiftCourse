@@ -68,29 +68,55 @@ print(homeWorkPointer)
 
  You should find out how many seconds have passed
  since the beginning of the year until your birthday.
+ 
+ My birthday is July 12.
 */
 print(startFirstPartPointer)
 
+let dayInMonthOfBirthday = 12
 let daysInMonth = (jan: 31, feb: 28, mar: 31, apr: 30, may: 31, jun: 30, jul: 31)
-let timeValues = (hoursInDay: 24, minInHour: 60, secInMinute: 60)
+let timeValues = (hoursInDay: 24, minutesInHour: 60, secondsInMinute: 60)
+
+let daysInBirthdayMonth = daysInMonth.jul - (daysInMonth.jul - (dayInMonthOfBirthday - 1))
+
+let daysToBirthday = daysInMonth.jan + daysInMonth.feb +
+                    daysInMonth.mar + daysInMonth.apr + daysInMonth.may +
+                    daysInMonth.jun + daysInBirthdayMonth
+
+let secondsInDay = timeValues.hoursInDay * timeValues.minutesInHour * timeValues.secondsInMinute
+
+let secondsToBithday = daysToBirthday * secondsInDay
+
+print("\(secondsToBithday) seconds have passed since the beginning of the year until my birthday.")
 
 
 print(endPointer)
 /*
  Part 2.
  
+ 
  Count and display what quarter you were born in.
  */
-
 print(startSecondPartPointer)
 
+let monthNumber = 10
 
+if monthNumber < 1 && monthNumber > 12 {
+    print("Invalid month number!")
+}
 
-
+if monthNumber > 0 && monthNumber < 4{
+    print("Birthday in first quarter")
+} else if monthNumber > 3 && monthNumber < 7 {
+    print("Birthday in second quarter")
+} else if monthNumber > 6 && monthNumber < 10 {
+    print("Birthday in third quarter")
+} else if monthNumber > 9 && monthNumber <= 12 {
+    print("Birthday in fourth quarter")
+}
 
 
 print(endPointer)
-
 /*
  Part 3.
  
@@ -99,12 +125,20 @@ print(endPointer)
  you should recognize the white or black cell with these
  coordinates.
  */
-
 print(startThirdPartPointer)
 
 
+let cell = (x: 8, y: 8)
+let cellColor = (black: "black", white: "white")
+let answer = "Cell with coordinates x = \(cell.x), y = \(cell.y) is "
 
-      
+if cell.x == cell.y {
+    print(answer + cellColor.black)
+} else if cell.x > 8 || cell.x < 1 || cell.y > 8 || cell.y < 1 {
+    print("Invalid values!")
+} else {
+    (cell.x * cell.y) % 2 == 0 ? print(answer + cellColor.white) : print(answer + cellColor.black)
+}
+
       
 print(endPointer)
-
