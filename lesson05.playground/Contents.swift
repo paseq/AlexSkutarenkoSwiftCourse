@@ -1,7 +1,5 @@
 /*
- 
- LESSSON 05: BASIC OPERATORS
- 
+        LESSSON 05: BASIC OPERATORS
  */
 
 let total = 5 + 6 - 8 * 3 - 5 / 10
@@ -94,25 +92,24 @@ print(endPointer)
 /*
  Part 2.
  
- 
  Count and display what quarter you were born in.
  */
 print(startSecondPartPointer)
 
-let monthNumber = 10
+let monthNumber = 1
 
-if monthNumber < 1 && monthNumber > 12 {
+if monthNumber < 1 || monthNumber > 12 {
     print("Invalid month number!")
 }
 
 if monthNumber > 0 && monthNumber < 4{
-    print("Birthday in first quarter")
+    print("Birthday in first quarter.")
 } else if monthNumber > 3 && monthNumber < 7 {
-    print("Birthday in second quarter")
+    print("Birthday in second quarter.")
 } else if monthNumber > 6 && monthNumber < 10 {
-    print("Birthday in third quarter")
+    print("Birthday in third quarter.")
 } else if monthNumber > 9 && monthNumber <= 12 {
-    print("Birthday in fourth quarter")
+    print("Birthday in fourth quarter.")
 }
 
 
@@ -128,17 +125,18 @@ print(endPointer)
 print(startThirdPartPointer)
 
 
-let cell = (x: 8, y: 8)
-let cellColor = (black: "black", white: "white")
-let answer = "Cell with coordinates x = \(cell.x), y = \(cell.y) is "
+let cell = (x: 8, y: 1)
+let answer: String
+let colorString: String
 
-if cell.x == cell.y {
-    print(answer + cellColor.black)
-} else if cell.x > 8 || cell.x < 1 || cell.y > 8 || cell.y < 1 {
-    print("Invalid values!")
+if cell.x > 8 || cell.x < 1 || cell.y > 8 || cell.y < 1 {
+    answer = "Invalid values!"
 } else {
-    (cell.x * cell.y) % 2 == 0 ? print(answer + cellColor.white) : print(answer + cellColor.black)
+    (cell.x * cell.y) % 2 == 0 ? (colorString = "white") : (colorString = "black")
+    answer = "Cell with coordinates x = \(cell.x), y = \(cell.y) is \(colorString)"
 }
 
-      
+print(answer)
+
+
 print(endPointer)
