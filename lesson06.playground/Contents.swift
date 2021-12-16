@@ -104,7 +104,7 @@ let sum = firstNumber + secondNumber + thirdNumber + fourthNumber + fifthNumber
 
 print("\(firstNumber) + \(secondNumber) + \(thirdNumber) + \(fourthNumber) + \(fifthNumber) = \(sum)")
 
-print(String(firstString) + String(secondString))
+print(String(firstNumber) + " + " + String(secondNumber) + " + " + String(thirdNumber) + " + " +  String(fourthNumber) + " + " + String(fifthNumber) + " = " + String(sum))
 
 print(endPointer)
 /*
@@ -117,19 +117,42 @@ print(endPointer)
 print(startSecondPartPointer)
 
 
+let stringOfSymbols = "\u{13D5}\u{20dd}\u{0461}\u{20dd}\u{03AF}\u{20dd}\u{0192}\u{20dd}\u{0165}\u{20dd}"
+
+print("Length of '\(stringOfSymbols)' using 'NSString.length' is \((stringOfSymbols as NSString).length).")
+print("Length of '\(stringOfSymbols)' using '.count' is \(stringOfSymbols.count).")
+
 
 print(endPointer)
 /*
  Part 3.
  
- Using cycle "for" withdraw english alphabet with uncapital
- symbols. Create a variable with symbol of alphabet and find
+ Using cycle "for" withdraw english alphabet. Create a variable with symbol of alphabet and find
  the index of this symbol.
- 
  */
 print(startThirdPartPointer)
 
 
-    
-print(endPointer)
+let alphabet = "abcdefghigklmnopqrstuvwxyz"
+let letter: Character = "z"
+var indexOfLetter: Int?
+var count = 0
 
+for char in alphabet {
+    
+    if char == letter {
+        indexOfLetter = count
+    }
+    
+    print(char)
+    count += 1
+}
+
+if let index = indexOfLetter {
+    print("Index of letter '\(letter)' in '\(alphabet)' is \(index).")
+} else {
+    print("Symbol '\(letter)' is not found.")
+}
+
+
+print(endPointer)
