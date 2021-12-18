@@ -80,46 +80,103 @@ print(homeWorkPointer)
 print(startFirstPartPointer)
 
 
+//  PART 1.1
+print("1.1:\n")
 
-print("\t1.1:\n")
-
-let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+let daysInMonths = [31,
+                    28,
+                    31,
+                    30,
+                    31,
+                    30,
+                    31,
+                    31,
+                    30,
+                    31,
+                    30,
+                    31]
 
 for days in daysInMonths {
-    print(days)
-}
-
-
-
-print("\n\t1.2:\n")
-
-let nameOfMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-var index = 0
-
-for name in nameOfMonth {
     
-    print("\(name) has \(daysInMonths[index]) days.")
-    index += 1
-}
-
-
-
-print("\n\t1.3:\n")
-
-var arrayOfMonths = [(name: String, numberOfDays: Int)](repeating: (name: "", numberOfDays: 0), count: 12)
-index = 0
-
-for (i, month) in arrayOfMonths.enumerated() {
-
-    month.name = nameOfMonth[index]
-    month.numberOfDays = daysInMonths[index]
+    print("\t" + "\(days)")
     
-    index += 1
 }
 
-for month in arrayOfMonths {
-    print("\(month.name) has \(month.numberOfDays) days.")
+
+print(endPointer)
+//  PART 1.2
+print("\n1.2:\n")
+
+let nameOfMonth = ["January",
+                   "February",
+                   "March",
+                   "April",
+                   "May",
+                   "June",
+                   "July",
+                   "August",
+                   "September",
+                   "October",
+                   "November",
+                   "December"]
+
+for (index, name) in nameOfMonth.enumerated() {
+    
+    print("\t\(name) has \(daysInMonths[index]) days.")
+    
+}
+
+
+print(endPointer)
+//  PART 1.3
+print("\n1.3:\n")
+
+var arrayOfMonths: [(name: String, numberOfDays: Int)] = []
+
+for i in 0..<12 {
+    
+    arrayOfMonths.append((nameOfMonth[i], daysInMonths[i]))
+    print("\t\(arrayOfMonths[i].name) has \(arrayOfMonths[i].numberOfDays) days.")
+    
+}
+
+
+print(endPointer)
+//  PART 1.4
+print("\n1.4:\n")
+
+for i in 0..<12 {
+    
+    print("\t\(arrayOfMonths[i].name) has \(arrayOfMonths[11 - i].numberOfDays) days.")
+    
+}
+
+
+print(endPointer)
+//  PART 1.5
+print("\n1.5:\n")
+
+let date: (month: Int, dayOfMonth: Int) = (7, 12)
+var daysPassed = 0
+
+if date.month < 1 || date.month > 12 {
+    
+    print("\tInvalid month number!")
+    
+} else if date.dayOfMonth < 1 || date.dayOfMonth > 31 {
+    
+    print("\tInvalid day number!")
+    
+} else {
+    
+    for month in 0..<date.month {
+        daysPassed += arrayOfMonths[month].numberOfDays
+    }
+    
+    daysPassed -= arrayOfMonths[date.month - 1].numberOfDays - date.dayOfMonth
+    
+    print("\tYear to date to \(date.dayOfMonth) \(arrayOfMonths[date.month - 1].name) passed \(daysPassed) days.")
+    
 }
 
 
@@ -127,30 +184,88 @@ print(endPointer)
 /*
  Part 2.
  
- Сделайте первое задание к уроку номер 4 используя массивы:
+ Do the first task of lesson04 using arrays:
 
- (создайте массив опшинал интов и посчитайте сумму)
-
- - в одном случае используйте optional binding
- - в другом forced unwrapping
- - а в третьем оператор ??
-
- 3. создайте строку алфавит и пустой массив строк
-
- в цикле пройдитесь по всем символам строки попорядку, преобразовывайте каждый в строку и добавляйте в массив, причем так, чтобы на выходе получился массив с алфавитом задом-наперед
+ 2.1: Create an array of optionals ints and calculate their sum,
+        using optional binding.
+ 2.2: Using forced unwrapping.
+ 2.3: Using '??' operator.
  */
 print(startSecondPartPointer)
 
+let arrayOfInts: [Int?] = [1, 2, nil, 4, 5]
+var sumInts = 0
+
+//  PART 2.1
+print("2.1:\n")
+
+for integer in arrayOfInts {
+    
+    if let tmp = integer {
+        sumInts += tmp
+    }
+    
+}
+
+print ("\tUsing an optional binding, the sum is \(sumInts)")
+
+
+
+print(endPointer)
+//  PART 2.2
+print("\n2.2:\n")
+
+sumInts = 0
+
+for integer in arrayOfInts {
+    
+    if integer != nil {
+        sumInts += integer!
+    }
+    
+}
+
+print ("\tUsing an forced unwrapped, the sum is \(sumInts)")
+
+
+print(endPointer)
+//  PART 2.3
+print("\n2.3:\n")
+
+sumInts = 0
+
+for integer in arrayOfInts {
+    
+    sumInts += integer ?? 0
+    
+}
+
+print ("\tUsing '??' operator, the sum is \(sumInts)")
 
 
 print(endPointer)
 /*
  Part 3.
+ 
+ Create an alphabet string and create an empty array of strings.
+ Loop through each character in order, converting each character
+ to a string type, and add this string to the array, output should
+ be a reverse alphabetical array
  */
 print(startThirdPartPointer)
 
+let alphabet = "abcdefghijklmnopqrstuvwxyz"
+var arrayAlphabet: [String] = []
 
+for char in alphabet {
     
+    arrayAlphabet.insert(String(char), at: 0)
+    
+}
+
+print("\t" + "\(arrayAlphabet)")
+
+
 print(endPointer)
 
 
