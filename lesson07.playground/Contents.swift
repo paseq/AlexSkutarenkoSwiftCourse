@@ -83,6 +83,7 @@ print(startFirstPartPointer)
 //  PART 1.1
 print("1.1:\n")
 
+
 let daysInMonths = [31,
                     28,
                     31,
@@ -107,7 +108,8 @@ print(endPointer)
 //  PART 1.2
 print("\n1.2:\n")
 
-let nameOfMonth = ["January",
+
+let nameOfMonths = ["January",
                    "February",
                    "March",
                    "April",
@@ -120,7 +122,7 @@ let nameOfMonth = ["January",
                    "November",
                    "December"]
 
-for (index, name) in nameOfMonth.enumerated() {
+for (index, name) in nameOfMonths.enumerated() {
     
     print("\t\(name) has \(daysInMonths[index]) days.")
     
@@ -133,9 +135,10 @@ print("\n1.3:\n")
 
 var arrayOfMonths: [(name: String, numberOfDays: Int)] = []
 
-for i in 0..<12 {
+for i in 0..<nameOfMonths.count {
     
-    arrayOfMonths.append((nameOfMonth[i], daysInMonths[i]))
+    arrayOfMonths.append((nameOfMonths[i], daysInMonths[i]))
+    
     print("\t\(arrayOfMonths[i].name) has \(arrayOfMonths[i].numberOfDays) days.")
     
 }
@@ -145,7 +148,8 @@ print(endPointer)
 //  PART 1.4
 print("\n1.4:\n")
 
-for i in 0..<12 {
+
+for i in 0..<arrayOfMonths.count {
     
     print("\t\(arrayOfMonths[i].name) has \(arrayOfMonths[11 - i].numberOfDays) days.")
     
@@ -156,7 +160,8 @@ print(endPointer)
 //  PART 1.5
 print("\n1.5:\n")
 
-let date: (month: Int, dayOfMonth: Int) = (7, 12)
+
+let date: (month: Int, dayOfMonth: Int) = (1, 1)
 var daysPassed = 0
 
 if date.month < 1 || date.month > 12 {
@@ -169,11 +174,13 @@ if date.month < 1 || date.month > 12 {
     
 } else {
     
-    for month in 0..<date.month {
+    for month in 0..<(date.month - 1) {
+        
         daysPassed += arrayOfMonths[month].numberOfDays
+        
     }
     
-    daysPassed -= arrayOfMonths[date.month - 1].numberOfDays - date.dayOfMonth
+    daysPassed += date.dayOfMonth
     
     print("\tYear to date to \(date.dayOfMonth) \(arrayOfMonths[date.month - 1].name) passed \(daysPassed) days.")
     
@@ -193,16 +200,21 @@ print(endPointer)
  */
 print(startSecondPartPointer)
 
-let arrayOfInts: [Int?] = [1, 2, nil, 4, 5]
+
+let arrayOfInts = [1, 2, nil, 4, 5]
 var sumInts = 0
+
 
 //  PART 2.1
 print("2.1:\n")
 
+
 for integer in arrayOfInts {
     
-    if let tmp = integer {
-        sumInts += tmp
+    if let integer = integer {
+        
+        sumInts += integer
+        
     }
     
 }
@@ -210,17 +222,19 @@ for integer in arrayOfInts {
 print ("\tUsing an optional binding, the sum is \(sumInts)")
 
 
-
 print(endPointer)
 //  PART 2.2
 print("\n2.2:\n")
+
 
 sumInts = 0
 
 for integer in arrayOfInts {
     
     if integer != nil {
+        
         sumInts += integer!
+
     }
     
 }
@@ -231,6 +245,7 @@ print ("\tUsing an forced unwrapped, the sum is \(sumInts)")
 print(endPointer)
 //  PART 2.3
 print("\n2.3:\n")
+
 
 sumInts = 0
 
@@ -253,6 +268,7 @@ print(endPointer)
  be a reverse alphabetical array
  */
 print(startThirdPartPointer)
+
 
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 var arrayAlphabet: [String] = []
