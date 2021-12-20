@@ -48,11 +48,15 @@ dictSampleFirst = [0 : "zero",
                    2 : "second"]
 
 for key in dictSampleFirst.keys {
+    
     print("key = \(key), value = \(dictSampleFirst[key]!)")
+    
 }
 
 for (key, value) in dictSampleFirst {
+    
     print("key = \(key), value = \(value)")
+    
 }
 
 /*
@@ -70,10 +74,87 @@ print(homeWorkPointer)
 /*
  Part 1.
  
- 
+ 1.1.   Create a dictionary as student diary, where name and lastname is key of dictionary, grade for test it is value of key.
+ 1.2.   Some students have changed grades.
+ 1.3.   To add new students to the dictionary.
+ 1.4.   Delete some students.
+ 1.5.   Calculate the average of students grades and general score for all students.
  */
 print(startFirstPartPointer)
 
+
+//  PART 1.1
+print("1.1:\n")
+
+var dictionaryOfStudents = ["Michail Kondakov" : 2,
+                              "Pavel Bogdanov" : 5,
+                             "Sophia Dobrodey" : 4,
+                             "Elena Sharigina" : 3,
+                             "Rashid Gashimov" : 4]
+
+for (key, value) in dictionaryOfStudents {
+    
+    print("\t\(key) has \(value) grade.")
+    
+}
+
+
+//  PART 1.2
+print("\n1.2:\n")
+
+dictionaryOfStudents["Michail Kondakov"] = 3
+dictionaryOfStudents.updateValue(4, forKey: "Elena Sharigina")
+
+for (key, value) in dictionaryOfStudents {
+    
+    print("\t\(key) has \(value) grade.")
+    
+}
+
+
+//  PART 1.3
+print("\n1.3:\n")
+
+dictionaryOfStudents["Tatyana Andrusyak"] = 5
+dictionaryOfStudents.updateValue(4, forKey: "Ulayana Dokuchaeva")
+
+for (key, value) in dictionaryOfStudents {
+    
+    print("\t\(key) has \(value) grade.")
+    
+}
+
+
+//  PART 1.4
+print("\n1.4:\n")
+
+dictionaryOfStudents["Michail Kondakov"] = nil
+dictionaryOfStudents.removeValue(forKey: "Elena Sharigina")
+
+for (key, value) in dictionaryOfStudents {
+    
+    print("\t\(key) has \(value) grade.")
+    
+}
+
+
+//  PART 1.5
+print("\n1.5:\n")
+
+var sumOfGrades = 0
+var averageOfGrades = 0
+
+for (_, value) in dictionaryOfStudents {
+    
+    sumOfGrades += value
+    
+    
+}
+
+averageOfGrades = sumOfGrades / dictionaryOfStudents.count
+
+print("General score of all students = \(sumOfGrades)")
+print("Average of grades = \(averageOfGrades)")
 
 
 print(endPointer)
