@@ -50,15 +50,11 @@ dictSampleFirst = [0 : "zero",
                    2 : "second"]
 
 for key in dictSampleFirst.keys {
-    
     print("key = \(key), value = \(dictSampleFirst[key]!)")
-    
 }
 
 for (key, value) in dictSampleFirst {
-    
     print("key = \(key), value = \(value)")
-    
 }
 
 /*
@@ -102,9 +98,7 @@ var dictionaryOfStudents = ["Michail Kondakov" : 2,
                              "Rashid Gashimov" : 4]
 
 for (key, value) in dictionaryOfStudents {
-    
     print("\t\(key) has \(value) grade.")
-    
 }
 
 
@@ -115,9 +109,7 @@ dictionaryOfStudents["Michail Kondakov"] = 3
 dictionaryOfStudents.updateValue(4, forKey: "Elena Sharigina")
 
 for (key, value) in dictionaryOfStudents {
-    
     print("\t\(key) has \(value) grade.")
-    
 }
 
 
@@ -128,9 +120,7 @@ dictionaryOfStudents["Tatyana Andrusyak"] = 5
 dictionaryOfStudents.updateValue(4, forKey: "Ulayana Dokuchaeva")
 
 for (key, value) in dictionaryOfStudents {
-    
     print("\t\(key) has \(value) grade.")
-    
 }
 
 
@@ -141,9 +131,7 @@ dictionaryOfStudents["Michail Kondakov"] = nil
 dictionaryOfStudents.removeValue(forKey: "Elena Sharigina")
 
 for (key, value) in dictionaryOfStudents {
-    
     print("\t\(key) has \(value) grade.")
-    
 }
 
 
@@ -154,9 +142,7 @@ var sumOfGrades = 0
 var averageOfGrades = 0
 
 for (_, value) in dictionaryOfStudents {
-    
     sumOfGrades += value
-    
 }
 
 averageOfGrades = sumOfGrades / dictionaryOfStudents.count
@@ -183,8 +169,6 @@ print(endPointer)
 print(startSecondPartPointer)
 
 
-
-
 //  PART 2.1
 print("\n2.1:\n")
 
@@ -209,9 +193,7 @@ print(dictionaryOfMonths)
 print("\n2.2:\n")
 
 for (month, numberOfDays) in dictionaryOfMonths {
-    
     print("\t\(month) has \(numberOfDays).")
-    
 }
 
 
@@ -219,9 +201,7 @@ for (month, numberOfDays) in dictionaryOfMonths {
 print("\n2.3:\n")
 
 for key in dictionaryOfMonths.keys {
-    
     print("\t\(key) has \(dictionaryOfMonths[key]!).")
-    
 }
 
 
@@ -237,26 +217,24 @@ print(endPointer)
  */
 print(startThirdPartPointer)
 
+
 var chessCells: [String : Bool] = [:]
-let letters = ["a", "b", "c", "d", "e", "f", "g", "h" ]
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
-for (x, letter) in letters.enumerated() {
+for (columnNum, columnLetter) in letters.enumerated() {
     
-    for y in 0..<letters.count {
+    var colorBool = (columnNum % 2 == 0)
+    
+    for rowNum in 0..<letters.count {
         
-        var value = true
-        
-        if ((x + 1) * (y + 1)) % 2 != 0 {
-            value = false
-        }
-
-        chessCells.updateValue(value, forKey: letter + "\(x + 1)")
+        colorBool = !colorBool
+        chessCells.updateValue(colorBool, forKey: columnLetter + String(rowNum + 1))
     }
-    
 }
 
-chessCells
+for key in chessCells.keys.sorted() {
+    print("\(key) - \(chessCells[key]!)")
+}
+
 
 print(endPointer)
-
-
