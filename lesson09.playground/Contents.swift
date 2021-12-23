@@ -113,45 +113,73 @@ print(homeWorkPointer)
  */
 print(startFirstPartPointer)
 
+
 let someString = """
                 Create the random minimum 200 characters string.
                 Using a loop and switch operator, calculate
                 the number of vowels, consonants, numbers and
-                symbols.
+                symbols.\t\t\t\t
                 Create the random minimum 200 characters string.
                 Using a loop and switch operator, calculate
                 the number of vowels, consonants, numbers and
                 symbols.
                 """
-print("String:\n\n\(someString)\n\nCount of characters: \(someString.count)")
+print("String:\n\n\(someString)\n")
 
-var vowels = 0
-var consonants = 0
-var numbers = 0
-var symbols = 0
+var chars = (vowels: 0, consonants: 0, numbers: 0, symbols: 0)
 
 for char in someString {
     
-    let char = char.asciiValue ?? 0
     switch char {
         
-        case (char > 64 && char < 91) || (char > 96 && char < 122):
-            print("\(char) is alphabet")
-        
+        case _ where char.isNumber:
+            chars.numbers += 1
+        case _ where !char.isLetter:
+            chars.symbols += 1
+        case _ where char.isLetter:
+            let vowelsArray = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
+
+            vowelsArray.contains(String(char)) ? (chars.vowels += 1) : (chars.consonants += 1)
         default:
             break
     }
 }
 
+print("The string contains \(someString.count) charaters, including:\n")
+print("\t\(chars.vowels)\tvowels")
+print("\t\(chars.consonants)\tconsonants")
+print("\t\(chars.numbers)\tnumber")
+print("\t\(chars.symbols)\tsymbols\n")
+
+let sum = chars.consonants + chars.symbols + chars.vowels + chars.numbers
+
+print("\(chars.vowels) + \(chars.consonants) + \(chars.numbers) + \(chars.symbols) = \(sum) ")
+
+
 print(endPointer)
 /*
      Part 2.
      
-     Создайте свитч который принимает возраст человека и выводит описание жизненного этапа
+     Create a switch whitch display period of life depending on age.
  */
 print(startSecondPartPointer)
 
 
+let oldAge = 0
+
+switch oldAge {
+    
+    case 0...1: print("Age of infancy")
+    case 1...3: print("Age of early")
+    case 3...7: print("Preschool age")
+    case 7...12: print("Primary school age")
+    case 12...15: print("Early adolescence")
+    case 15...18: print("Adolescence")
+    case 18...35: print("Youth")
+    case 35...60: print("Maturity")
+    case 60...100: print("Old age")
+    default: break
+}
 
 
 print(endPointer)
@@ -165,7 +193,21 @@ print(endPointer)
 print(startThirdPartPointer)
 
 
+let personName = (name: "Alexander", lastName: "Enamenskii", patronymic: "Vladimirovich")
 
+switch personName {
+    
+    case (let name, _, _) where name.hasPrefix("A") || name.hasPrefix("O"):
+        print("Hello, \(name).")
+    
+    case (let name, _, let patronymic) where patronymic.hasPrefix("V") || patronymic.hasPrefix("D"):
+        print("Hello, \(name) \(patronymic)")
+    
+    case (_, let lastName, _) where lastName.hasPrefix("E") || lastName.hasPrefix("Z"):
+        print("Hello, \(lastName)")
+    
+    default: print("Hello, " + personName.name + personName.lastName + personName.patronymic)
+}
 
 
 print(endPointer)
