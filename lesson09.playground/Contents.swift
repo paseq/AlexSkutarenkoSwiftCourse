@@ -193,20 +193,20 @@ print(endPointer)
 print(startThirdPartPointer)
 
 
-let personName = (name: "Alexander", lastName: "Enamenskii", patronymic: "Vladimirovich")
+let personName = (name: "Тлександр", lastName: "Тлизаров", patronymic: "Тладимирович")
 
 switch personName {
     
-    case (let name, _, _) where name.hasPrefix("A") || name.hasPrefix("O"):
+    case (let name, _, _) where name.hasPrefix("А") || name.hasPrefix("О"):
         print("Hello, \(name).")
     
-    case (let name, _, let patronymic) where patronymic.hasPrefix("V") || patronymic.hasPrefix("D"):
-        print("Hello, \(name) \(patronymic)")
+    case (let name, _, let patronymic) where patronymic.hasPrefix("В") || patronymic.hasPrefix("Д"):
+        print("Hello, \(name) \(patronymic).")
     
-    case (_, let lastName, _) where lastName.hasPrefix("E") || lastName.hasPrefix("Z"):
-        print("Hello, \(lastName)")
+    case (_, let lastName, _) where lastName.hasPrefix("Е") || lastName.hasPrefix("З"):
+        print("Hello, \(lastName).")
     
-    default: print("Hello, " + personName.name + personName.lastName + personName.patronymic)
+    default: print("Hello, \(personName.name) \(personName.lastName) \(personName.patronymic).")
 }
 
 
@@ -220,7 +220,25 @@ print(endPointer)
 print(startFourthPartPointer)
 
 
+let coords = (letter: "a", digit: 5)
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "g"]
 
+
+if !letters.contains(coords.letter) || coords.digit < 1 || coords.digit > 10 {
+    print("Invalid value!")
+}
+
+switch coords {
+
+    case ("d", 3...5):
+        print("Wounded!")
+    case ("f", 2...3):
+        print("Wounded!")
+    case ("b", 4), ("g", 7), ("f", 8):
+        print("Killed!")
+    default:
+        print("Miss!")
+}
 
 
 print(endPointer)
