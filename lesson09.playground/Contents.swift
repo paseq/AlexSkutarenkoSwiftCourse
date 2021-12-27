@@ -30,7 +30,6 @@ switch age {
         break
     case 51, 53:
         print("51, 53")
-
     default: print("default")
 }
 
@@ -42,7 +41,6 @@ case "Alex" where age < 50:   //'where' allows add condition
     print("Name = \(name), Age = \(age)")
 case "Alex" where age >= 50:
     print(">= 50")
-
 default:
     break
 }
@@ -61,7 +59,6 @@ case (_, let number) where number >= 65 && number <= 70:   //value binding
     print("value binding")
 case ("Alex", _):
     print("Hi, \(name)")
-
 default:
     break
 }
@@ -76,7 +73,6 @@ case let (x, y) where x == -y:
     print("x == -y")
 case let (_, y) where y < 0:
     print("y < 0")
-
 default:
     break
 }
@@ -91,7 +87,6 @@ case _ as Double:
     print("Double")
 case _ as Float:
     print("Float")
-
 default:
     break
 }
@@ -139,13 +134,14 @@ for char in someString {
         
     case _ where char.isNumber:
         chars.numbers += 1
+        
     case _ where !char.isLetter:
         chars.symbols += 1
+        
     case _ where char.isLetter:
         let vowelsArray = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
-
         vowelsArray.contains(String(char)) ? (chars.vowels += 1) : (chars.consonants += 1)
-
+        
     default:
         break
     }
@@ -184,14 +180,13 @@ case 15...18: print("Adolescence")
 case 18...35: print("Youth")
 case 35...60: print("Maturity")
 case 60...100: print("Old age")
-    
 default: print("Invalid value!")
 }
 
 
 print(endPointer)
 /*
-     Part 3.
+    Part 3.
      
     You have the students full name (russian letters). If the name
     begins with the letters "А" or "О", call his by name, if the
@@ -203,18 +198,23 @@ print(startThirdPartPointer)
 
 
 let personName = (name: "Тлександр", lastName: "Тлизаров", middleName: "Тладимирович")
+let nameOut: String
 
 switch personName {
 
 case (let name, _, _) where name.hasPrefix("А"): fallthrough
-case (let name, _, _) where name.hasPrefix("О"): print("Hello, \(name).")
+case (let name, _, _) where name.hasPrefix("О"): nameOut = name
+    
 case (let name, _, let middleName) where middleName.hasPrefix("В"): fallthrough
-case (let name, _, let middleName) where middleName.hasPrefix("Д"): print("Hello, \(name) \(middleName).")
+case (let name, _, let middleName) where middleName.hasPrefix("Д"): nameOut = "\(name) \(middleName)"
+    
 case (_, let lastName, _) where lastName.hasPrefix("Е"): fallthrough
-case (_, let lastName, _) where lastName.hasPrefix("З"): print("Hello, \(lastName).")
-
-default: print("Hello, \(personName.name) \(personName.lastName) \(personName.middleName).")
+case (_, let lastName, _) where lastName.hasPrefix("З"): nameOut = lastName
+    
+default: nameOut = "\(personName.name) \(personName.lastName) \(personName.middleName)"
 }
+
+print("Hello, " + nameOut)
 
 
 print(endPointer)
@@ -232,7 +232,6 @@ print(startFourthPartPointer)
 let coords = (letter: "a", digit: 5)
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "g"]
 
-
 if !letters.contains(coords.letter) || coords.digit < 1 || coords.digit > 10 {
     print("Invalid value!")
 }
@@ -245,7 +244,6 @@ case ("f", 2...3):
     print("Wounded!")
 case ("b", 4), ("g", 7), ("f", 8):
     print("Killed!")
-    
 default:
     print("Miss!")
 }
