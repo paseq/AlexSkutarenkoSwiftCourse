@@ -42,49 +42,67 @@ func sayHi() {
     print("Hi!")
 }
 
-let hi = sayHi()
-
-sayHi()
 
 /*
              HOMEWORK
  */
 
-let fillString = "--------------------------------"
-let homeWorkPointer = "\(fillString)HOMEWORK\(fillString)"
-let startFirstPartPointer = "PART 1:\n"
-let startSecondPartPointer = "PART 2:\n"
-let startThirdPartPointer = "PART 3:\n"
-let endPointer = fillString + fillString
+func homeWorkPrint(part: Int = 0) {
+    
+    let emptyString = "                                "
+    let fillString  = "________________________________________________________________________"
+    var out = ""
+    
+    if part > 0 {
+        
+        if part == 1 {
+            out = emptyString + "HOMEWORK\n" + fillString
+        }
+        
+        out += "\n\n\tPART " + String(part) + ":\n"
+        
+    } else {
+        out = fillString
+    }
+    
+    print(out)
+}
 
-print(homeWorkPointer)
 /*
  Part 1.
  
+ Create a cople functions with short names which return the string with beatiful symbol or symbols. For example heart() return the heart etc. Call this fuctions into print() for a output this symbols with help koncationation.
+ 
  
  */
-print(startFirstPartPointer)
+homeWorkPrint(part: 1)
+
+//write here
 
 
-
-print(endPointer)
+homeWorkPrint()
 /*
  Part 2.
  
  
  */
-print(startSecondPartPointer)
+homeWorkPrint(part: 2)
+
+
+//write here
 
 
 
-print(endPointer)
+homeWorkPrint()
 /*
  Part 3.
  
  
  */
-print(startThirdPartPointer)
+homeWorkPrint(part: 3)
 
 
-    
-print(endPointer)
+//write here
+
+
+homeWorkPrint()
