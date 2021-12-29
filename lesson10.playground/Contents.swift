@@ -50,19 +50,19 @@ func sayHi() {
 func homeWorkPrint(part: Int = 0) {
     
     let emptyString = "                                "
-    let fillString  = "________________________________________________________________________"
+    let filledString  = "________________________________________________________________________"
     var out = ""
     
     if part > 0 {
         
         if part == 1 {
-            out = emptyString + "HOMEWORK\n" + fillString
+            out = emptyString + "HOMEWORK\n" + filledString
         }
         
         out += "\n\n\tPART " + String(part) + ":\n"
         
     } else {
-        out = fillString
+        out = filledString
     }
     
     print(out)
@@ -72,13 +72,19 @@ func homeWorkPrint(part: Int = 0) {
  Part 1.
  
  Create a cople functions with short names which return the string with beatiful symbol or symbols. For example heart() return the heart etc. Call this fuctions into print() for a output this symbols with help koncationation.
- 
- 
  */
 homeWorkPrint(part: 1)
 
-//write here
 
+func cube() -> String {
+    return "\u{1F9CA}"
+}
+
+func corona() -> String {
+    return "\u{1F9A0}"
+}
+
+print(cube() + corona())
 
 homeWorkPrint()
 /*
@@ -90,7 +96,6 @@ homeWorkPrint(part: 2)
 
 
 //write here
-
 
 
 homeWorkPrint()
