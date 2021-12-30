@@ -90,12 +90,19 @@ homeWorkPrint()
 /*
  Part 2.
  
- 
+ Implement a function, that takes a letter and a number, and returns a color this cell.
  */
 homeWorkPrint(part: 2)
 
 
-//write here
+func defineCellColor(letter l: String, number n: String) -> String {
+    
+    switch (l, n) {
+    
+        
+    }
+    return result
+}
 
 
 homeWorkPrint()
