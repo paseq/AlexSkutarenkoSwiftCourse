@@ -90,13 +90,23 @@ homeWorkPrint()
 /*
  Part 2.
  
- Implement a function, that takes a letter and a number, and returns a color this cell.
+ Implement a function, that takes a letter and a number of chessboard, and returns a color this cell.
  */
 homeWorkPrint(part: 2)
 
 
 func defineCellColor(letter l: String, number n: String) -> String {
     
+    let dictLetters = ["A" : 1,
+                       "B" : 2,
+                       "C" : 3,
+                       "D" : 4,
+                       "E" : 5,
+                       "F" : 6,
+                       "G" : 7,
+                       "H" : 8,
+                       "I" : 9,
+                       "J" : 10]
     switch (l, n) {
     
         
