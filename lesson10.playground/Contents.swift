@@ -107,8 +107,8 @@ func defineCellColor(letter l: String, number n: String) -> String {
                        "H" : 8,
                        "I" : 9,
                        "J" : 10]
-    switch (l, n) {
     
+    if dictLetters[letter] % 2 == 0 {
         
     }
     return result
