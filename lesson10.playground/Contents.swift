@@ -95,24 +95,16 @@ homeWorkPrint()
 homeWorkPrint(part: 2)
 
 
-func defineCellColor(letter l: String, number n: String) -> String {
-    
-    let dictLetters = ["A" : 1,
-                       "B" : 2,
-                       "C" : 3,
-                       "D" : 4,
-                       "E" : 5,
-                       "F" : 6,
-                       "G" : 7,
-                       "H" : 8,
-                       "I" : 9,
-                       "J" : 10]
-    
-    if dictLetters[letter] % 2 == 0 {
-        
-    }
-    return result
+func fillingDict() -> [String : Int] {
+    var letters
 }
+
+func defineCellColor(letter l: String, number n: Int) -> String {
+    
+    return res ? "белая" : "черная"
+}
+
+defineCellColor(letter: "A", number: "1")
 
 
 homeWorkPrint()
