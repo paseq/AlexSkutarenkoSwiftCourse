@@ -95,16 +95,31 @@ homeWorkPrint()
 homeWorkPrint(part: 2)
 
 
-func fillingDict() -> [String : Int] {
-    var letters
-}
+func fillingDict() {
 
-func defineCellColor(letter l: String, number n: Int) -> String {
+    var dict: [String : Int] = [:]
+    let a = UnicodeScalar("a").value
+    let z = UnicodeScalar("z").value
     
-    return res ? "белая" : "черная"
+    for digit in a...z {
+        
+    }
+    print(dict)
+    
 }
 
-defineCellColor(letter: "A", number: "1")
+fillingDict()
+
+//func defineCellColor(letter l: String, number n: Int) -> String {
+//
+//    for value in fillingDict() {
+//
+//    }
+//
+//    return res ? "белая" : "черная"
+//}
+
+//defineCellColor(letter: "A", number: "1")
 
 
 homeWorkPrint()
